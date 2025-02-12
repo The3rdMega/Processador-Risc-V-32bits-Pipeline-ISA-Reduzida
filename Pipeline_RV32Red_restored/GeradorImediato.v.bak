@@ -1,0 +1,23 @@
+module GeradorImediato(
+    input wire [31:0] instrucao,  // Instrução de 32 bits
+    output wire [31:0] imediato     // Valor do imediato calculado
+);
+
+always @(*)
+begin
+	case (instrucao[6:0])
+		// tipo I
+		7'b0110011,
+		7'b0000011,
+		7'b1100111,
+		7'b0010011: imediato <= {{20{instrucao[31]}}, instrucao[31:20]} ;
+		// tipo S
+		7'b0100011: imediato <= {{20{instrucao[31]}}, instrucao[31:25], instrucao[11:7]} ;
+		// tipo B
+		7'b1100011: imediato <= {{20{instrucao[31]}}, instrucao[7], instrucao[30:25], instrucao[11:8]} ;
+		// tipo J
+		7'b1101111: imediato <= {{12{instrucao[31]}}, instrucao[19:12], instrucao[20], instrucao[30:21]} ;
+		default: imediato <= 32'hxxxx_xxxx;
+	endcase
+end
+endmodule

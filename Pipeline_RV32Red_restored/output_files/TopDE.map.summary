@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Wed Feb 12 15:19:36 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : TopDE
+Top-level Entity Name : TopDE
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 308
+Total pins : 73
+Total virtual pins : 96
+Total block memory bits : 65,536
+Total DSP Blocks : 0
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

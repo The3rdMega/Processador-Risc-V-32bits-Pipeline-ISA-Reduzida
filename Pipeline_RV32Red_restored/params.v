@@ -1,0 +1,30 @@
+`ifndef PARAMS
+`define PARAMS
+
+parameter
+	OPTIPOR = 7'b0110011,
+	OPLOAD = 7'b0000011,
+	OPSTORE = 7'b0100011,
+	OPBRANCH = 7'b1100011,
+	OPJAL = 7'b1101111,
+	OPJALR = 7'b1100111,
+	OPIMEDIATO = 7'b0010011,
+	
+
+	ALUADD = 4'b0010,
+	ALUSUB = 4'b0110,
+	ALUAND = 4'b0000,
+	ALUOR = 4'b0001,
+	ALUXOR = 4'b0011,
+	ALUSLT = 4'b0111,
+	
+	REGALU = 2'd0,
+	REGMEM = 2'd1,
+	RPC = 2'd2,
+	
+	BCN = 2'd0,
+	BCB = 2'd1,
+	BCJAL = 2'd2,
+	BCJALR  = 2'd3;
+	
+`endif
