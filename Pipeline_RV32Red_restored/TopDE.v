@@ -29,17 +29,17 @@ module TopDE (
 	assign LEDR[1]=Clock;
 
 	
-	assign LEDR[7:3]=4'b1111;
+/*	assign LEDR[7:3]=4'b1111;
 	Uniciclo UNI1 (.clockCPU(clockDIV), .clockMem(Clock), .reset(~KEY[0]), 
-						.PC(pc), .Instr(instr), .regin(SW[8:4]), .regout(regout)); 
+						.PC(pc), .Instr(instr), .regin(SW[8:4]), .regout(regout)); */
 
 					
 /*	Multiciclo MULT1 (.clockCPU(clockDIV), .clockMem(Clock), .reset(~KEY[0]), 
 						.PC(pc), .Instr(instr), .regin(SW[8:4]), .regout(regout), .estado(LEDR[3:0]));	*/
 						
-/*	assign LEDR[3:0]=4'b0000;
+	assign LEDR[5:2]=4'b0000;
 	Pipeline PIP1 (.clockCPU(clockDIV), .clockMem(Clock), .reset(~KEY[0]), 
-						.PC(pc), .Instr(instr), .regin(SW[8:4]), .regout(regout)); */
+						.PC(pc), .Instr(instr), .regin(SW[8:4]), .regout(regout)); 
 		
 
 	wire [31:0] hex;

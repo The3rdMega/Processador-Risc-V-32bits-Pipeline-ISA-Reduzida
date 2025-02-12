@@ -1,5 +1,5 @@
 Assembler report for TopDE
-Wed Feb 12 15:21:47 2025
+Wed Feb 12 18:17:51 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/artlu/Documentos/OAC/LAB5/Pipeline_RV32Red_restored/output_files/TopDE.sof
+  6. Assembler Device Options: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/output_files/TopDE.sof
   7. Assembler Messages
 
 
@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Wed Feb 12 15:21:47 2025 ;
+; Assembler Status      ; Successful - Wed Feb 12 18:17:51 2025 ;
 ; Revision Name         ; TopDE                                 ;
 ; Top-level Entity Name ; TopDE                                 ;
 ; Family                ; Cyclone V                             ;
@@ -64,23 +64,23 @@ https://fpgasoftware.intel.com/eula.
 +--------+------------------------+--------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Assembler Generated Files                                                           ;
-+-------------------------------------------------------------------------------------+
-; File Name                                                                           ;
-+-------------------------------------------------------------------------------------+
-; C:/Users/artlu/Documentos/OAC/LAB5/Pipeline_RV32Red_restored/output_files/TopDE.sof ;
-+-------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                                  ;
++----------------------------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                                  ;
++----------------------------------------------------------------------------------------------------------------------------+
+; C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/output_files/TopDE.sof ;
++----------------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/artlu/Documentos/OAC/LAB5/Pipeline_RV32Red_restored/output_files/TopDE.sof ;
-+----------------+----------------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                                      ;
-+----------------+----------------------------------------------------------------------------------------------+
-; JTAG usercode  ; 0x00E2292D                                                                                   ;
-; Checksum       ; 0x00E2292D                                                                                   ;
-+----------------+----------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/output_files/TopDE.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                                             ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------+
+; JTAG usercode  ; 0x010BC01E                                                                                                                          ;
+; Checksum       ; 0x010BC01E                                                                                                                          ;
++----------------+-------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -89,14 +89,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Feb 12 15:21:26 2025
+    Info: Processing started: Wed Feb 12 18:17:44 2025
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off TopDE -c TopDE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5235 megabytes
-    Info: Processing ended: Wed Feb 12 15:21:47 2025
-    Info: Elapsed time: 00:00:21
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 4880 megabytes
+    Info: Processing ended: Wed Feb 12 18:17:51 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:06
 
 

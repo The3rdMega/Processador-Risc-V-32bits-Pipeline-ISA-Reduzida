@@ -55,8 +55,19 @@ module Pipeline (
 	
 	
 	
-	///MEMORIA
-	wire [31:0] wIouD, MemData;
+	
+	
+	
+//*******************
+// Instruction Fetch
+	
+	///PC
+	wire [1:0] PCSource;
+	
+	
+	
+//*******************
+// Instruction Decode
 	
 	///CONTROLE
 	wire ALUSrc;
@@ -69,18 +80,32 @@ module Pipeline (
 	
 	wire BranchValidated;
 	
-	///ULA
-	wire [31:0] SaidaULA, Leitura1, Leitura2,B;
-	
-	///PC
-	wire [1:0] PCSource;
+	//BANCO DE REGISTRADORES
+	wire [31:0] WriteData;
 	
 	///GERADOR DE IMEDIATOS
 	wire [31:0] Imediato;
 	
 	
-	//Registradores
-	wire [31:0] WriteData;
+//*******************
+// Execution
+	
+	///ULA
+	wire [31:0] SaidaULA, Leitura1, Leitura2,B;
+	
+	//ULA CONTROLE
+	wire [3:0] ALUCONTROL;
+	
+	
+	
+	
+//*******************
+// Memory Stage
+	
+	///MEMORIA
+	wire [31:0] wIouD, MemData;
+
+	
 	
 	
 //******************************************
@@ -97,15 +122,15 @@ always @(posedge clockCPU  or posedge reset)
 		//Atualiza PC
 		case(PCSource)
 			2'b00: PC <= PC+4;
-			2'b01:	PC <= IF_ID[63:32]+(Imediato<<1);
-			2'b10: PC <= PC+4; //TEMPORÁRIO
+			2'b01:	PC <= IF_ID[63:32] + (Imediato<<1);
+			2'b10: PC <= Leitura1 + (Imediato<<1); //SE BUGAR, TALVEZ SEJA PORQUE O RESIGTRADOR NÃO ESCREVEU AINDA EM LEITURA1
 			default: PC <= PC+4;
 		endcase
 		//Atualiza Registradores De Pipeline
 		IF_ID <= {PC[31:0],Instr[31:0]};
-		ID_EX <= {ALUSrc,Mem2Reg[1:0],RegWrite,MemRead,MemWrite,ALUOp[1:0],Leitura1[31:0],Leitura2[31:0],Imediato[31:0],Instr[30],Instr[14:12],Instr[11:7]};
+		ID_EX <= {ALUSrc,Mem2Reg[1:0],RegWrite,MemRead,MemWrite,ALUOp[1:0],Leitura1[31:0],Leitura2[31:0],Imediato[31:0],IF_ID[30],IF_ID[14:12],IF_ID[11:7]};
 		EX_MEM <= {ID_EX[112:107],SaidaULA[31:0],B[31:0],ID_EX[4:0]};
-		MEM_WB <= {EX_MEM[73:71],MemData[31:0],SaidaULA[31:0],Instr[11:7]};
+		MEM_WB <= {EX_MEM[73:71],MemData[31:0],EX_MEM[68:37],EX_MEM[11:7]};
 		
 		
 	end
@@ -115,7 +140,7 @@ always @(posedge clockCPU  or posedge reset)
 			//Cuidando da Origem do PC PCSource
 			always @(*)
 			begin
-				if(BranchValidated && Branch == BCB) PCSource <= 2'b01;
+				if(BranchValidated && (Branch == BCB)) PCSource <= 2'b01;
 				else if (Branch == BCJAL) PCSource <= 2'b01;
 				else if (Branch == BCJALR) PCSource <= 2'b10;
 				else PCSource <= 2'b00;
@@ -144,7 +169,7 @@ always @(posedge clockCPU  or posedge reset)
 			.ALUOp(ALUOp)
 		);
 		
-		module Registradores(
+		Registradores BancoDeRegistradores(
 			.clk(clockCPU), 
 			.reset(reset), 
 			.RegWrite(MEM_WB[69]),
@@ -167,7 +192,48 @@ always @(posedge clockCPU  or posedge reset)
 		);
 		
 		
+		/// Instruction Decode Components
+		//ALUSrc
+		always@(*)
+		begin
+			if(ID_EX[112]) B <= ID_EX[40:9];	//Recebe Imediato
+			else B <= ID_EX[72:41];	//Recebe Leitura2
+		end
 		
+		
+		
+		ALU UnidadeLogicoAritmetica(
+			.inputA(ID_EX[104:73]),  // Primeiro valor (32 bits)
+			.inputB(B),  // Segundo valor (32 bits)
+			.alu_controle(ALUCONTROL), // Sinal de controle da ALU (4 bits)
+			.resultado(SaidaULA), // Resultado da operação (32 bits)
+			.zero() // Indica se o resultado da ALU é zero
+		);
+		
+		ALUControle ControleDaULA(
+			.alu_op(ID_EX[106:105]),        // Sinal de controle ALU op (2 bits)
+			.funct3(ID_EX[7:5]),        // Funct3 (3 bits) para especificar o tipo de operação
+			.funct7_5(ID_EX[8]),            // Funct7 bit 5 (1 bit) para controle adicional de operações
+			.alu_controle(ALUCONTROL)    // Resultado do controle da ALU (4 bits)
+		);
+		
+		
+		/// Memory Stage Components
+		
+		////////////////////////////// AJEITAR ENDEREÇO DESCOBRIR COMO FUNCIONA //////////////////////////////
+		ramD MemD (.address(EX_MEM[48:39]), .clock(clockMem), .data(EX_MEM[36:5]), .wren(EX_MEM[69]), .q(MemData));
+		//EX_MEM[68:37] -> SaidaULA[31:0]; EX_MEM[48:39] -> SaidaULA[11:2]	-->ANTES ESTAVA PC[11:2] ???
+		////////////////////////////// AJEITAR ENDEREÇO DESCOBRIR COMO FUNCIONA //////////////////////////////
+		
+		
+		
+		
+		/// Write Back Components
+		always @(*)
+		begin
+			if(MEM_WB[70]) WriteData <= MEM_WB[36:5];
+			else WriteData <= MEM_WB[68:37];
+		end
 		
 		
 		
@@ -175,14 +241,6 @@ always @(posedge clockCPU  or posedge reset)
 		
 //LAMAR//assign MemWrite = 1'b0;
 
-
-
-
-
-ramD MemD (.address(PC[11:2]), .clock(clockMem), .data(B), .wren(MemWrite), .q(MemData));
-
-
-	
 //*****************************************
 	
 			

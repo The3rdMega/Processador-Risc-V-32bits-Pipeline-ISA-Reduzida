@@ -56,7 +56,7 @@ module Controle(
       MemRead  <= 1'b0;
       MemWrite <= 1'b0;
       Branch   <= BCB;
-      ALUOp    <= 2'bXX;
+      ALUOp    <= 2'bxx;
     end
 	 OPIMEDIATO: begin // addi
       ALUSrc   <= 1'b1;
@@ -77,7 +77,7 @@ module Controle(
 		ALUOp <= 2'b00;
 		end
 	 OPJAL: begin
-		ALUSrc <= 1'bX;
+		ALUSrc <= 1'bx;
 		Mem2Reg <= RPC; 
 		RegWrite <= 1'b1;
 		MemRead  <= 1'b0;

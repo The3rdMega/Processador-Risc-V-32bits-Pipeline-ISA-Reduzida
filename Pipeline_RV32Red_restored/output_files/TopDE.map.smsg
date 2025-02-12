@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at ALUControle.v(11): always construct contains both blocking and non-blocking assignments File: C:/Users/artlu/Documentos/OAC/LAB5/Pipeline_RV32Red_restored/ALUControle.v Line: 11
+Warning (10268): Verilog HDL information at ALUControle.v(11): always construct contains both blocking and non-blocking assignments File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ALUControle.v Line: 11
