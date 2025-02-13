@@ -1,13 +1,13 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off TopDE -c TopDE --vector_source="C:/Users/mvlam/Dropbox/kiko/Disciplinas/UnB/OAC/2024-2/Lab3/Auxiliar_restored/Waveform.vwf" --testbench_file="C:/Users/mvlam/Dropbox/kiko/Disciplinas/UnB/OAC/2024-2/Lab3/Auxiliar_restored/simulation/qsim/Waveform.vwf.vt"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off TopDE -c TopDE --vector_source="C:/Users/mvlam/Dropbox/kiko/Disciplinas/UnB/OAC/2024-2/Lab3/Auxiliar_restored/Waveform.vwf" --testbench_file="C:/Users/mvlam/Dropbox/kiko/Disciplinas/UnB/OAC/2024-2/Lab3/Auxiliar_restored/simulation/qsim/Waveform.vwf.vt"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/mvlam/Dropbox/kiko/Disciplinas/UnB/OAC/2024-2/Lab3/Auxiliar_restored/simulation/qsim/" TopDE -c TopDE</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/mvlam/Dropbox/kiko/Disciplinas/UnB/OAC/2024-2/Lab3/Auxiliar_restored/simulation/qsim/" TopDE -c TopDE</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off TopDE -c TopDE --vector_source="C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Waveform.vwf" --testbench_file="C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/simulation/qsim/Waveform.vwf.vt"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off TopDE -c TopDE --vector_source="C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Waveform.vwf" --testbench_file="C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/simulation/qsim/Waveform.vwf.vt"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/simulation/qsim/" TopDE -c TopDE</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=verilog --output_directory="C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/simulation/qsim/" TopDE -c TopDE</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
 vlog -work work TopDE.vo
 vlog -work work Waveform.vwf.vt
-vsim  -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.TopDE_vlg_vec_tst
+vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.TopDE_vlg_vec_tst
 vcd file -direction TopDE.msim.vcd
 vcd add -internal TopDE_vlg_vec_tst/*
 vcd add -internal TopDE_vlg_vec_tst/i1/*
@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 
 
 </modelsim_script>
@@ -42,6 +43,7 @@ run -all
 quit -f
 
 
+
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -52,7 +54,7 @@ the Block Editor! File corruption is VERY likely to occur.
 */
 
 /*
-Copyright (C) 2021  Intel Corporation. All rights reserved.
+Copyright (C) 2024  Intel Corporation. All rights reserved.
 Your use of Intel Corporation's design tools, logic functions 
 and other software and tools, and any partner logic 
 functions, and any output files from any of the foregoing 
@@ -1240,11 +1242,6 @@ SIGNAL("regout[0]")
 	PARENT = "regout";
 }
 
-GROUP("SW")
-{
-	MEMBERS = "SW[9]", "SW[8]", "SW[7]", "SW[6]", "SW[5]", "SW[4]", "SW[3]", "SW[2]", "SW[1]", "SW[0]";
-}
-
 SIGNAL("LEDR[1]")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -1253,6 +1250,11 @@ SIGNAL("LEDR[1]")
 	LSB_INDEX = -1;
 	DIRECTION = OUTPUT;
 	PARENT = "";
+}
+
+GROUP("SW")
+{
+	MEMBERS = "SW[9]", "SW[8]", "SW[7]", "SW[6]", "SW[5]", "SW[4]", "SW[3]", "SW[2]", "SW[1]", "SW[0]";
 }
 
 TRANSITION_LIST("CLOCK_50")
@@ -1329,7 +1331,7 @@ TRANSITION_LIST("SW[8]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 5000.0;
 	}
 }
 
@@ -1338,7 +1340,7 @@ TRANSITION_LIST("SW[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 5000.0;
 	}
 }
 
@@ -1356,7 +1358,7 @@ TRANSITION_LIST("SW[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 5000.0;
+		LEVEL 1 FOR 5000.0;
 	}
 }
 
@@ -2290,7 +2292,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "SW";
-	EXPAND_STATUS = COLLAPSED;
+	EXPAND_STATUS = EXPANDED;
 	RADIX = Binary;
 	TREE_INDEX = 1;
 	TREE_LEVEL = 0;

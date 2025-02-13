@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at Oscillator.sv(12): object "OUT" differs only in case from object "out" in the same scope File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/RISCV-v24/RISC-V_v24_restored/Sintetizador/Oscillator.sv Line: 12
+Info (10281): Verilog HDL Declaration information at Channel.sv(7): object "CHANNEL" differs only in case from object "channel" in the same scope File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/RISCV-v24/RISC-V_v24_restored/Sintetizador/Channel.sv Line: 7

@@ -13,13 +13,13 @@ module Controle(
  );
  
  always @(*) begin
-		//ALUSrc   <= 1'b0;
-      //Mem2Reg  <= 1'b0;
-      //RegWrite <= 1'b0;
-      //MemRead  <= 1'b0;
-      //MemWrite <= 1'b0;
-      //Branch   <= 1'b0;
-      //ALUOp    <= 2'b00;
+		ALUSrc   <= 1'b0;
+      Mem2Reg  <= REGALU;
+      RegWrite <= 1'b0;
+      MemRead  <= 1'b0;
+      MemWrite <= 1'b0;
+      Branch   <= BCN;
+      ALUOp    <= 2'b11;
  
 	case (OPcode)
     OPTIPOR: begin // Tipo R
@@ -56,7 +56,7 @@ module Controle(
       MemRead  <= 1'b0;
       MemWrite <= 1'b0;
       Branch   <= BCB;
-      ALUOp    <= 2'bxx;
+      ALUOp    <= 2'bxx;	//Pois ele testa na mão
     end
 	 OPIMEDIATO: begin // addi
       ALUSrc   <= 1'b1;
@@ -86,13 +86,13 @@ module Controle(
 		ALUOp <= 2'bxx; 
 		end
     default: begin // Caso padrão
-      ALUSrc   <= 1'bx;
-      Mem2Reg  <= 2'bxx;
-      RegWrite <= 1'bx;
-      MemRead  <= 1'bx;
-      MemWrite <= 1'bx;
-      Branch   <= 2'bxx;
-      ALUOp    <= 2'bxx;
+      ALUSrc   <= 1'b0;
+      Mem2Reg  <= REGALU;
+      RegWrite <= 1'b0;
+      MemRead  <= 1'b0;
+      MemWrite <= 1'b0;
+      Branch   <= BCN;
+      ALUOp    <= 2'b11;
     end
   endcase
  end

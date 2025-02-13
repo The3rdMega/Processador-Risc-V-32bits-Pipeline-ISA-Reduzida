@@ -14,9 +14,12 @@ module TopDE (
 	
 		wire clockDIV, Clock;
 	
-	initial 
-		clockDIV <= 1'b0;
-
+	initial
+		begin
+			clockDIV <= 1'b0;
+			LEDR[9:6]<=4'b0;
+		end
+		
 	always @(posedge Clock) 
 		begin 
 			if(SW[9])
@@ -40,8 +43,12 @@ module TopDE (
 	assign LEDR[5:2]=4'b0000;
 	Pipeline PIP1 (.clockCPU(clockDIV), .clockMem(Clock), .reset(~KEY[0]), 
 						.PC(pc), .Instr(instr), .regin(SW[8:4]), .regout(regout)); 
-		
-
+	
+	always @(posedge Clock) 
+	begin	
+		LEDR[9:6]=~LEDR[9:6];
+	end
+	
 	wire [31:0] hex;
 		
 	always @(*)

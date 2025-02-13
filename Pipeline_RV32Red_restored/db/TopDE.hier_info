@@ -66,10 +66,10 @@ LEDR[2] <= <GND>
 LEDR[3] <= <GND>
 LEDR[4] <= <GND>
 LEDR[5] <= <GND>
-LEDR[6] <= <GND>
-LEDR[7] <= <GND>
-LEDR[8] <= <GND>
-LEDR[9] <= <GND>
+LEDR[6] <= LEDR[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[7] <= LEDR[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[8] <= LEDR[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[9] <= LEDR[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 HEX0[0] <= decoder7:D0.Out
 HEX0[1] <= decoder7:D0.Out
 HEX0[2] <= decoder7:D0.Out
@@ -1938,16 +1938,16 @@ OPcode[3] => Decoder0.IN3
 OPcode[4] => Decoder0.IN2
 OPcode[5] => Decoder0.IN1
 OPcode[6] => Decoder0.IN0
-ALUSrc <= ALUSrc.DB_MAX_OUTPUT_PORT_TYPE
+ALUSrc <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 Mem2Reg[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
-Mem2Reg[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-RegWrite <= RegWrite.DB_MAX_OUTPUT_PORT_TYPE
+Mem2Reg[1] <= Mem2Reg.DB_MAX_OUTPUT_PORT_TYPE
+RegWrite <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
 MemRead <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 MemWrite <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 Branch[0] <= Branch.DB_MAX_OUTPUT_PORT_TYPE
-Branch[1] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-ALUOp[0] <= <GND>
-ALUOp[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+Branch[1] <= Mem2Reg.DB_MAX_OUTPUT_PORT_TYPE
+ALUOp[0] <= WideOr7.DB_MAX_OUTPUT_PORT_TYPE
+ALUOp[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores

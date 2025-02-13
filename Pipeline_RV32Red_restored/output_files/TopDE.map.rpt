@@ -1,5 +1,5 @@
 Analysis & Synthesis report for TopDE
-Wed Feb 12 18:16:50 2025
+Thu Feb 13 19:32:55 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -15,32 +15,33 @@ Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis IP Cores Summary
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Source assignments for Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|altsyncram_r0h2:altsyncram1
- 15. Source assignments for Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|altsyncram_gvg2:altsyncram1
- 16. Parameter Settings for User Entity Instance: Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component
- 17. Parameter Settings for User Entity Instance: Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "decoder7:D5"
- 20. Port Connectivity Checks: "decoder7:D4"
- 21. Port Connectivity Checks: "decoder7:D3"
- 22. Port Connectivity Checks: "decoder7:D2"
- 23. Port Connectivity Checks: "decoder7:D1"
- 24. Port Connectivity Checks: "decoder7:D0"
- 25. Port Connectivity Checks: "Pipeline:PIP1|ALU:UnidadeLogicoAritmetica"
- 26. Port Connectivity Checks: "Pipeline:PIP1|Registradores:BancoDeRegistradores"
- 27. Port Connectivity Checks: "Pipeline:PIP1|Controle:BlocoDeControle"
- 28. Port Connectivity Checks: "Pipeline:PIP1|ramI:MemC"
- 29. Port Connectivity Checks: "Pipeline:PIP1"
- 30. In-System Memory Content Editor Settings
- 31. Post-Synthesis Netlist Statistics for Top Partition
- 32. Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub
- 33. Elapsed Time Per Partition
- 34. Analysis & Synthesis Messages
- 35. Analysis & Synthesis Suppressed Messages
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Source assignments for Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|altsyncram_r0h2:altsyncram1
+ 17. Source assignments for Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|altsyncram_gvg2:altsyncram1
+ 18. Parameter Settings for User Entity Instance: Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component
+ 19. Parameter Settings for User Entity Instance: Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component
+ 20. altsyncram Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "decoder7:D5"
+ 22. Port Connectivity Checks: "decoder7:D4"
+ 23. Port Connectivity Checks: "decoder7:D3"
+ 24. Port Connectivity Checks: "decoder7:D2"
+ 25. Port Connectivity Checks: "decoder7:D1"
+ 26. Port Connectivity Checks: "decoder7:D0"
+ 27. Port Connectivity Checks: "Pipeline:PIP1|ALU:UnidadeLogicoAritmetica"
+ 28. Port Connectivity Checks: "Pipeline:PIP1|Registradores:BancoDeRegistradores"
+ 29. Port Connectivity Checks: "Pipeline:PIP1|Controle:BlocoDeControle"
+ 30. Port Connectivity Checks: "Pipeline:PIP1|ramI:MemC"
+ 31. Port Connectivity Checks: "Pipeline:PIP1"
+ 32. In-System Memory Content Editor Settings
+ 33. Post-Synthesis Netlist Statistics for Top Partition
+ 34. Elapsed Time Per Partition
+ 35. Analysis & Synthesis Messages
+ 36. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -67,13 +68,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +---------------------------------+------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Feb 12 18:16:50 2025          ;
+; Analysis & Synthesis Status     ; Successful - Thu Feb 13 19:32:55 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; TopDE                                          ;
 ; Top-level Entity Name           ; TopDE                                          ;
 ; Family                          ; Cyclone V                                      ;
 ; Logic utilization (in ALMs)     ; N/A                                            ;
-; Total registers                 ; 1597                                           ;
+; Total registers                 ; 1703                                           ;
 ; Total pins                      ; 73                                             ;
 ; Total virtual pins              ; 96                                             ;
 ; Total block memory bits         ; 65,536                                         ;
@@ -246,16 +247,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimate of Logic utilization (ALMs needed) ; 1496     ;
+; Estimate of Logic utilization (ALMs needed) ; 1534     ;
 ;                                             ;          ;
-; Combinational ALUT usage for logic          ; 1703     ;
+; Combinational ALUT usage for logic          ; 1751     ;
 ;     -- 7 input functions                    ; 6        ;
 ;     -- 6 input functions                    ; 943      ;
-;     -- 5 input functions                    ; 245      ;
-;     -- 4 input functions                    ; 146      ;
-;     -- <=3 input functions                  ; 363      ;
+;     -- 5 input functions                    ; 299      ;
+;     -- 4 input functions                    ; 129      ;
+;     -- <=3 input functions                  ; 374      ;
 ;                                             ;          ;
-; Dedicated logic registers                   ; 1597     ;
+; Dedicated logic registers                   ; 1703     ;
 ;                                             ;          ;
 ; Virtual pins                                ; 96       ;
 ; I/O pins                                    ; 73       ;
@@ -265,9 +266,9 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 0        ;
 ;                                             ;          ;
 ; Maximum fan-out node                        ; clockDIV ;
-; Maximum fan-out                             ; 1321     ;
-; Total fan-out                               ; 16465    ;
-; Average fan-out                             ; 4.55     ;
+; Maximum fan-out                             ; 1426     ;
+; Total fan-out                               ; 16991    ;
+; Average fan-out                             ; 4.51     ;
 +---------------------------------------------+----------+
 
 
@@ -276,13 +277,13 @@ https://fpgasoftware.intel.com/eula.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                               ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |TopDE                                                                                                                                  ; 1703 (26)           ; 1597 (1)                  ; 65536             ; 0          ; 73   ; 96           ; |TopDE                                                                                                                                                                                                                                                                                                                                            ; TopDE                             ; work         ;
-;    |Pipeline:PIP1|                                                                                                                      ; 1486 (231)          ; 1451 (327)                ; 65536             ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1                                                                                                                                                                                                                                                                                                                              ; Pipeline                          ; work         ;
-;       |ALU:UnidadeLogicoAritmetica|                                                                                                     ; 106 (106)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|ALU:UnidadeLogicoAritmetica                                                                                                                                                                                                                                                                                                  ; ALU                               ; work         ;
-;       |ALUControle:ControleDaULA|                                                                                                       ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|ALUControle:ControleDaULA                                                                                                                                                                                                                                                                                                    ; ALUControle                       ; work         ;
-;       |Controle:BlocoDeControle|                                                                                                        ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|Controle:BlocoDeControle                                                                                                                                                                                                                                                                                                     ; Controle                          ; work         ;
-;       |GeradorImediato:GeradorDeImediatos|                                                                                              ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|GeradorImediato:GeradorDeImediatos                                                                                                                                                                                                                                                                                           ; GeradorImediato                   ; work         ;
-;       |Registradores:BancoDeRegistradores|                                                                                              ; 1018 (1018)         ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores                                                                                                                                                                                                                                                                                           ; Registradores                     ; work         ;
+; |TopDE                                                                                                                                  ; 1751 (27)           ; 1703 (2)                  ; 65536             ; 0          ; 73   ; 96           ; |TopDE                                                                                                                                                                                                                                                                                                                                            ; TopDE                             ; work         ;
+;    |Pipeline:PIP1|                                                                                                                      ; 1533 (294)          ; 1556 (432)                ; 65536             ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1                                                                                                                                                                                                                                                                                                                              ; Pipeline                          ; work         ;
+;       |ALU:UnidadeLogicoAritmetica|                                                                                                     ; 99 (99)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|ALU:UnidadeLogicoAritmetica                                                                                                                                                                                                                                                                                                  ; ALU                               ; work         ;
+;       |ALUControle:ControleDaULA|                                                                                                       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|ALUControle:ControleDaULA                                                                                                                                                                                                                                                                                                    ; ALUControle                       ; work         ;
+;       |Controle:BlocoDeControle|                                                                                                        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|Controle:BlocoDeControle                                                                                                                                                                                                                                                                                                     ; Controle                          ; work         ;
+;       |GeradorImediato:GeradorDeImediatos|                                                                                              ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|GeradorImediato:GeradorDeImediatos                                                                                                                                                                                                                                                                                           ; GeradorImediato                   ; work         ;
+;       |Registradores:BancoDeRegistradores|                                                                                              ; 1011 (1011)         ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores                                                                                                                                                                                                                                                                                           ; Registradores                     ; work         ;
 ;       |ramD:MemD|                                                                                                                       ; 48 (0)              ; 66 (0)                    ; 32768             ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|ramD:MemD                                                                                                                                                                                                                                                                                                                    ; ramD                              ; work         ;
 ;          |altsyncram:altsyncram_component|                                                                                              ; 48 (0)              ; 66 (0)                    ; 32768             ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                    ; altsyncram                        ; work         ;
 ;             |altsyncram_clq1:auto_generated|                                                                                            ; 48 (0)              ; 66 (0)                    ; 32768             ; 0          ; 0    ; 0            ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated                                                                                                                                                                                                                                                     ; altsyncram_clq1                   ; work         ;
@@ -339,13 +340,62 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; Pipeline:PIP1|WriteData[0]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[1]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[2]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[3]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[4]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[5]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[6]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[7]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[8]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[9]                          ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[10]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[11]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[12]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[13]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[14]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[15]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[16]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[17]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[18]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[19]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[20]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[21]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[22]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[23]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[24]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[25]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[26]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[27]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[28]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[29]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[30]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Pipeline:PIP1|WriteData[31]                         ; Pipeline:PIP1|Mux2  ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +---------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                  ;
 +-----------------------------------------------------------------------+---------------------------------------------+
 ; Register name                                                         ; Reason for Removal                          ;
 +-----------------------------------------------------------------------+---------------------------------------------+
-; Pipeline:PIP1|ID_EX[105]                                              ; Stuck at GND due to stuck port data_in      ;
-; Pipeline:PIP1|ID_EX[30..40]                                           ; Merged with Pipeline:PIP1|ID_EX[29]         ;
+; Pipeline:PIP1|PC[0]                                                   ; Stuck at GND due to stuck port data_in      ;
+; Pipeline:PIP1|IF_ID[32]                                               ; Stuck at GND due to stuck port data_in      ;
+; Pipeline:PIP1|ID_EX[113]                                              ; Stuck at GND due to stuck port data_in      ;
+; Pipeline:PIP1|EX_MEM[74]                                              ; Stuck at GND due to stuck port data_in      ;
+; Pipeline:PIP1|MEM_WB[72]                                              ; Stuck at GND due to stuck port data_in      ;
+; LEDR[8]~reg0                                                          ; Merged with LEDR[9]~reg0                    ;
+; LEDR[6]~reg0                                                          ; Merged with LEDR[9]~reg0                    ;
+; LEDR[7]~reg0                                                          ; Merged with LEDR[9]~reg0                    ;
+; Pipeline:PIP1|ID_EX[29..39]                                           ; Merged with Pipeline:PIP1|ID_EX[40]         ;
 ; Pipeline:PIP1|ID_EX[8]                                                ; Merged with Pipeline:PIP1|ID_EX[19]         ;
 ; Pipeline:PIP1|Registradores:BancoDeRegistradores|Registradores[0][0]  ; Stuck at GND due to stuck port clock_enable ;
 ; Pipeline:PIP1|Registradores:BancoDeRegistradores|Registradores[0][1]  ; Stuck at GND due to stuck port clock_enable ;
@@ -379,8 +429,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Pipeline:PIP1|Registradores:BancoDeRegistradores|Registradores[0][26] ; Stuck at GND due to stuck port clock_enable ;
 ; Pipeline:PIP1|Registradores:BancoDeRegistradores|Registradores[0][25] ; Stuck at GND due to stuck port clock_enable ;
 ; Pipeline:PIP1|Registradores:BancoDeRegistradores|Registradores[0][24] ; Stuck at GND due to stuck port clock_enable ;
-; Total Number of Removed Registers = 45                                ;                                             ;
+; Total Number of Removed Registers = 52                                ;                                             ;
 +-----------------------------------------------------------------------+---------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                    ;
++---------------------+---------------------------+------------------------------------------------------------------------------+
+; Register name       ; Reason for Removal        ; Registers Removed due to This Register                                       ;
++---------------------+---------------------------+------------------------------------------------------------------------------+
+; Pipeline:PIP1|PC[0] ; Stuck at GND              ; Pipeline:PIP1|IF_ID[32], Pipeline:PIP1|ID_EX[113], Pipeline:PIP1|EX_MEM[74], ;
+;                     ; due to stuck port data_in ; Pipeline:PIP1|MEM_WB[72],                                                    ;
+;                     ;                           ; Pipeline:PIP1|Registradores:BancoDeRegistradores|Registradores[0][0]         ;
++---------------------+---------------------------+------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -388,12 +449,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1597  ;
+; Total registers                              ; 1703  ;
 ; Number of registers using Synchronous Clear  ; 70    ;
 ; Number of registers using Synchronous Load   ; 123   ;
-; Number of registers using Asynchronous Clear ; 1133  ;
+; Number of registers using Asynchronous Clear ; 1533  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1488  ;
+; Number of registers using Clock Enable       ; 1191  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -422,41 +483,30 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                                                                                                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                                                                                                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[11]                                                                                                                                                                                                                    ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[5]                                                                                                                                                                                                          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[17]                                                                                                                                                                                                                    ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[5]                                                                                                                                                                                                          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[2]                                                                                                                                                                                                                     ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[8]                                                                                                                                                                                                                     ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|PC[0]                                                                                                                                                                                                                                                                                                                                      ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|PC[19]                                                                                                                                                                                                                                                                                                                                     ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[2]                                                                                                                                                                      ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[3]                                                                                                                                                                      ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|EX_MEM[59]                                                                                                                                                                                                                                                                                                                                 ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 40 LEs               ; 28 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]                                                                                                                                                                           ;
-; 26:1               ; 4 bits    ; 68 LEs        ; 52 LEs               ; 16 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]                                                                                                                                                                           ;
-; 3:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |TopDE|hex[4]                                                                                                                                                                                                                                                                                                                                                   ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|PCSource.10                                                                                                                                                                                                                                                                                                                                ;
-; 32:1               ; 24 bits   ; 504 LEs       ; 504 LEs              ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores|Mux78                                                                                                                                                                                                                                                                                                   ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores|Mux5                                                                                                                                                                                                                                                                                                    ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores|Mux34                                                                                                                                                                                                                                                                                                   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[1][2]                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|shadow_irf_reg[2][2]                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[2]                    ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|hub_minor_ver_reg[3]                    ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[1][6]                           ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irf_reg[2][6]                           ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|mixer_addr_reg_internal[4]              ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|word_counter[1] ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|irsr_reg[7]                             ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|design_hash_reg[0]                      ;
-; 28:1               ; 4 bits    ; 72 LEs        ; 56 LEs               ; 16 LEs                 ; Yes        ; |TopDE|sld_hub:auto_hub|alt_sld_fab_with_jtag_input:\instrumentation_fabric_with_node_gen:fabric_gen_new_way:with_jtag_input_gen:instrumentation_fabric|alt_sld_fab:instrumentation_fabric|alt_sld_fab_alt_sld_fab:alt_sld_fab|alt_sld_fab_alt_sld_fab_sldfabric:sldfabric|sld_jtag_hub:\jtag_hub_gen:real_sld_jtag_hub|sld_rom_sr:hub_info_reg|WORD_SR[2]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                                 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[16]                                               ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[5]                                     ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[12]                                               ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[5]                                     ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[8]                                                ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[0]                                                ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 58 LEs               ; 0 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|PC[19]                                                                                                                                                                ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[0] ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[3] ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|EX_MEM[54]                                                                                                                                                            ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 40 LEs               ; 28 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[3]      ;
+; 26:1               ; 4 bits    ; 68 LEs        ; 52 LEs               ; 16 LEs                 ; Yes        ; |TopDE|Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]      ;
+; 3:1                ; 31 bits   ; 62 LEs        ; 62 LEs               ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|Mux7                                                                                                                                                                  ;
+; 3:1                ; 23 bits   ; 46 LEs        ; 46 LEs               ; 0 LEs                  ; No         ; |TopDE|hex[2]                                                                                                                                                                              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|PCSource.10                                                                                                                                                           ;
+; 32:1               ; 24 bits   ; 504 LEs       ; 504 LEs              ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores|Mux86                                                                                                                              ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores|Mux24                                                                                                                              ;
+; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; No         ; |TopDE|Pipeline:PIP1|Registradores:BancoDeRegistradores|Mux57                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
@@ -702,14 +752,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Pipeline:PIP1|Controle:BlocoDeControle"                                                   ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                             ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
-; Mem2Reg[1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; MemRead    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------------+--------+----------+-------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Pipeline:PIP1|Controle:BlocoDeControle"                                                ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; MemRead ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -746,78 +795,47 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 1485                        ;
-;     CLR               ; 46                          ;
-;     ENA               ; 282                         ;
-;     ENA CLR           ; 1008                        ;
+; arriav_ff             ; 1591                        ;
+;     CLR               ; 417                         ;
+;     CLR SCLR          ; 31                          ;
+;     ENA               ; 18                          ;
+;     ENA CLR           ; 1006                        ;
 ;     ENA CLR SLD       ; 20                          ;
-;     ENA SCLR          ; 31                          ;
 ;     ENA SLD           ; 64                          ;
 ;     SCLR              ; 32                          ;
-;     plain             ; 2                           ;
-; arriav_lcell_comb     ; 1601                        ;
-;     arith             ; 177                         ;
-;         1 data inputs ; 82                          ;
-;         2 data inputs ; 17                          ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 29                          ;
+;     plain             ; 3                           ;
+; arriav_lcell_comb     ; 1649                        ;
+;     arith             ; 209                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 112                         ;
+;         2 data inputs ; 18                          ;
+;         4 data inputs ; 30                          ;
 ;         5 data inputs ; 48                          ;
 ;     extend            ; 4                           ;
 ;         7 data inputs ; 4                           ;
-;     normal            ; 1420                        ;
+;     normal            ; 1436                        ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 21                          ;
-;         2 data inputs ; 19                          ;
-;         3 data inputs ; 187                         ;
-;         4 data inputs ; 105                         ;
-;         5 data inputs ; 167                         ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 174                         ;
+;         4 data inputs ; 87                          ;
+;         5 data inputs ; 221                         ;
 ;         6 data inputs ; 920                         ;
 ; boundary_port         ; 223                         ;
 ; stratixv_ram_block    ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 8.00                        ;
-; Average LUT depth     ; 5.35                        ;
+; Max LUT depth         ; 8.10                        ;
+; Average LUT depth     ; 5.19                        ;
 +-----------------------+-----------------------------+
 
 
-+------------------------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Partition sld_hub:auto_hub ;
-+-----------------------+------------------------------------------+
-; Type                  ; Count                                    ;
-+-----------------------+------------------------------------------+
-; arriav_ff             ; 112                                      ;
-;     CLR               ; 6                                        ;
-;     ENA               ; 30                                       ;
-;     ENA CLR           ; 14                                       ;
-;     ENA CLR SLD       ; 39                                       ;
-;     SCLR              ; 7                                        ;
-;     plain             ; 16                                       ;
-; arriav_lcell_comb     ; 109                                      ;
-;     extend            ; 2                                        ;
-;         7 data inputs ; 2                                        ;
-;     normal            ; 107                                      ;
-;         0 data inputs ; 1                                        ;
-;         1 data inputs ; 4                                        ;
-;         2 data inputs ; 22                                       ;
-;         3 data inputs ; 15                                       ;
-;         4 data inputs ; 12                                       ;
-;         5 data inputs ; 30                                       ;
-;         6 data inputs ; 23                                       ;
-; boundary_port         ; 165                                      ;
-;                       ;                                          ;
-; Max LUT depth         ; 3.00                                     ;
-; Average LUT depth     ; 1.33                                     ;
-+-----------------------+------------------------------------------+
-
-
-+---------------------------------+
-; Elapsed Time Per Partition      ;
-+------------------+--------------+
-; Partition Name   ; Elapsed Time ;
-+------------------+--------------+
-; Top              ; 00:00:06     ;
-; sld_hub:auto_hub ; 00:00:00     ;
-+------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:05     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -826,7 +844,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
-    Info: Processing started: Wed Feb 12 18:16:21 2025
+    Info: Processing started: Thu Feb 13 19:32:27 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off TopDE -c TopDE
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -858,13 +876,45 @@ Info (12021): Found 1 design units, including 1 entities, in source file rami.v
 Info (12021): Found 1 design units, including 1 entities, in source file ramd.v
     Info (12023): Found entity 1: ramD File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramD.v Line: 40
 Info (12127): Elaborating entity "TopDE" for the top level hierarchy
-Warning (10034): Output port "LEDR[9..6]" at TopDE.v(5) has no driver File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
+Warning (10855): Verilog HDL warning at TopDE.v(18): initial value for variable LEDR should be constant File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 18
 Info (12128): Elaborating entity "fdiv" for hierarchy "fdiv:FDVI1" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 13
-Info (12128): Elaborating entity "Pipeline" for hierarchy "Pipeline:PIP1" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 42
-Warning (10230): Verilog HDL assignment warning at Pipeline.v(132): truncated value with size 75 to match size of target (74) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 132
-Warning (10230): Verilog HDL assignment warning at Pipeline.v(133): truncated value with size 72 to match size of target (71) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 133
+Info (12128): Elaborating entity "Pipeline" for hierarchy "Pipeline:PIP1" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 45
+Warning (10270): Verilog HDL Case Statement warning at Pipeline.v(240): incomplete case statement has no default case item File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Warning (10240): Verilog HDL Always Construct warning at Pipeline.v(240): inferring latch(es) for variable "WriteData", which holds its previous value in one or more paths through the always construct File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
 Warning (10034): Output port "estado" at Pipeline.v(11) has no driver File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 11
-Info (12128): Elaborating entity "ramI" for hierarchy "Pipeline:PIP1|ramI:MemC" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 149
+Info (10041): Inferred latch for "WriteData[0]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[1]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[2]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[3]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[4]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[5]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[6]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[7]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[8]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[9]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[10]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[11]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[12]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[13]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[14]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[15]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[16]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[17]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[18]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[19]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[20]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[21]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[22]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[23]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[24]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[25]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[26]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[27]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[28]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[29]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[30]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (10041): Inferred latch for "WriteData[31]" at Pipeline.v(240) File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+Info (12128): Elaborating entity "ramI" for hierarchy "Pipeline:PIP1|ramI:MemC" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 155
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramI.v Line: 86
 Info (12130): Elaborated megafunction instantiation "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramI.v Line: 86
 Info (12133): Instantiated megafunction "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramI.v Line: 86
@@ -889,8 +939,9 @@ Info (12128): Elaborating entity "altsyncram_omq1" for hierarchy "Pipeline:PIP1|
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r0h2.tdf
     Info (12023): Found entity 1: altsyncram_r0h2 File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_r0h2.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_r0h2" for hierarchy "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|altsyncram_r0h2:altsyncram1" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_omq1.tdf Line: 37
-Warning (113028): 1021 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_text.mif Line: 1
-    Warning (113027): Addresses ranging from 3 to 1023 are not initialized File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_text.mif Line: 1
+Warning (113028): 16345 out of 16384 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_text.mif Line: 1
+    Warning (113027): Addresses ranging from 39 to 16383 are not initialized File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_text.mif Line: 1
+Critical Warning (127004): Memory depth (1024) in the design file differs from memory depth (16384) in the Memory Initialization File "C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_text.mif" -- truncated remaining initial content value to fit RAM File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramI.v Line: 86
 Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_omq1.tdf Line: 38
 Info (12130): Elaborated megafunction instantiation "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_omq1.tdf Line: 38
 Info (12133): Instantiated megafunction "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_omq1.tdf Line: 38
@@ -905,12 +956,12 @@ Info (12133): Instantiated megafunction "Pipeline:PIP1|ramI:MemC|altsyncram:alts
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter" for hierarchy "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 302
 Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_jtag_endpoint_adapter:jtag_signal_adapter|sld_jtag_endpoint_adapter_impl:sld_jtag_endpoint_adapter_impl_inst" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/sld_jtag_endpoint_adapter.vhd Line: 232
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "Pipeline:PIP1|ramI:MemC|altsyncram:altsyncram_component|altsyncram_omq1:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga/23.1std/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
-Info (12128): Elaborating entity "Controle" for hierarchy "Pipeline:PIP1|Controle:BlocoDeControle" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 170
-Info (12128): Elaborating entity "Registradores" for hierarchy "Pipeline:PIP1|Registradores:BancoDeRegistradores" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 185
-Info (12128): Elaborating entity "GeradorImediato" for hierarchy "Pipeline:PIP1|GeradorImediato:GeradorDeImediatos" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 192
-Info (12128): Elaborating entity "ALU" for hierarchy "Pipeline:PIP1|ALU:UnidadeLogicoAritmetica" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 211
-Info (12128): Elaborating entity "ALUControle" for hierarchy "Pipeline:PIP1|ALUControle:ControleDaULA" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 218
-Info (12128): Elaborating entity "ramD" for hierarchy "Pipeline:PIP1|ramD:MemD" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 224
+Info (12128): Elaborating entity "Controle" for hierarchy "Pipeline:PIP1|Controle:BlocoDeControle" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 176
+Info (12128): Elaborating entity "Registradores" for hierarchy "Pipeline:PIP1|Registradores:BancoDeRegistradores" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 191
+Info (12128): Elaborating entity "GeradorImediato" for hierarchy "Pipeline:PIP1|GeradorImediato:GeradorDeImediatos" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 198
+Info (12128): Elaborating entity "ALU" for hierarchy "Pipeline:PIP1|ALU:UnidadeLogicoAritmetica" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 217
+Info (12128): Elaborating entity "ALUControle" for hierarchy "Pipeline:PIP1|ALUControle:ControleDaULA" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 224
+Info (12128): Elaborating entity "ramD" for hierarchy "Pipeline:PIP1|ramD:MemD" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 230
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramD.v Line: 86
 Info (12130): Elaborated megafunction instantiation "Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramD.v Line: 86
 Info (12133): Instantiated megafunction "Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramD.v Line: 86
@@ -935,8 +986,9 @@ Info (12128): Elaborating entity "altsyncram_clq1" for hierarchy "Pipeline:PIP1|
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gvg2.tdf
     Info (12023): Found entity 1: altsyncram_gvg2 File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_gvg2.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_gvg2" for hierarchy "Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|altsyncram_gvg2:altsyncram1" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_clq1.tdf Line: 37
-Warning (113028): 1024 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_data.mif Line: 1
-    Warning (113027): Addresses ranging from 0 to 1023 are not initialized File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_data.mif Line: 1
+Warning (113028): 32768 out of 32768 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_data.mif Line: 1
+    Warning (113027): Addresses ranging from 0 to 32767 are not initialized File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_data.mif Line: 1
+Critical Warning (127004): Memory depth (1024) in the design file differs from memory depth (32768) in the Memory Initialization File "C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_data.mif" -- truncated remaining initial content value to fit RAM File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramD.v Line: 86
 Info (12128): Elaborating entity "sld_mod_ram_rom" for hierarchy "Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_clq1.tdf Line: 38
 Info (12130): Elaborated megafunction instantiation "Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_clq1.tdf Line: 38
 Info (12133): Instantiated megafunction "Pipeline:PIP1|ramD:MemD|altsyncram:altsyncram_component|altsyncram_clq1:auto_generated|sld_mod_ram_rom:mgl_prim2" with the following parameter: File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/altsyncram_clq1.tdf Line: 38
@@ -948,9 +1000,9 @@ Info (12133): Instantiated megafunction "Pipeline:PIP1|ramD:MemD|altsyncram:alts
     Info (12134): Parameter "SHIFT_COUNT_BITS" = "6"
     Info (12134): Parameter "WIDTH_WORD" = "32"
     Info (12134): Parameter "WIDTHAD" = "10"
-Info (12128): Elaborating entity "decoder7" for hierarchy "decoder7:D0" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 60
+Info (12128): Elaborating entity "decoder7" for hierarchy "decoder7:D0" File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 67
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2025.02.12.18:16:34 Progress: Loading sldbdf28158/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2025.02.13.19:32:39 Progress: Loading sldbdf28158/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -973,22 +1025,84 @@ Info (12021): Found 2 design units, including 1 entities, in source file db/ip/s
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_sldfabric File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/ip/sldbdf28158/submodules/alt_sld_fab_alt_sld_fab_sldfabric.vhd Line: 11
 Info (12021): Found 1 design units, including 1 entities, in source file db/ip/sldbdf28158/submodules/alt_sld_fab_alt_sld_fab_splitter.sv
     Info (12023): Found entity 1: alt_sld_fab_alt_sld_fab_splitter File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/db/ip/sldbdf28158/submodules/alt_sld_fab_alt_sld_fab_splitter.sv Line: 3
+Info (286031): Timing-Driven Synthesis is running on partition "Top"
 Warning (12241): 8 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13012): Latch Pipeline:PIP1|WriteData[0] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[70] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[1] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[2] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[3] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[4] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[5] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[6] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[7] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[8] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[9] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[10] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[11] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[12] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[13] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[14] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[15] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[16] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[17] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[18] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[19] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[20] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[21] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[22] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[23] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[24] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[25] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[26] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[27] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[28] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[29] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[30] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
+Warning (13012): Latch Pipeline:PIP1|WriteData[31] has unsafe behavior File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 240
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal Pipeline:PIP1|MEM_WB[71] File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v Line: 130
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
     Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
     Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
     Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 5
     Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 6
     Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 6
     Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 6
     Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 6
     Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 6
     Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 6
+    Warning (13410): Pin "pc[0]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 7
     Warning (13410): Pin "regout[24]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
     Warning (13410): Pin "regout[25]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
     Warning (13410): Pin "regout[26]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
@@ -997,8 +1111,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "regout[29]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
     Warning (13410): Pin "regout[30]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
     Warning (13410): Pin "regout[31]" is stuck at GND File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
-Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (144001): Generated suppressed messages file C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/output_files/TopDE.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -1099,16 +1211,16 @@ Info (15717): Design contains 96 virtual pins; timing numbers associated with pa
     Info (15719): Pin "regout[29]" is virtual output pin File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
     Info (15719): Pin "regout[30]" is virtual output pin File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
     Info (15719): Pin "regout[31]" is virtual output pin File: C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v Line: 8
-Info (21057): Implemented 3249 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3402 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 59 output pins
-    Info (21061): Implemented 3107 logic cells
+    Info (21061): Implemented 3260 logic cells
     Info (21064): Implemented 64 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
-    Info: Peak virtual memory: 4915 megabytes
-    Info: Processing ended: Wed Feb 12 18:16:50 2025
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:52
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 96 warnings
+    Info: Peak virtual memory: 4952 megabytes
+    Info: Processing ended: Thu Feb 13 19:32:55 2025
+    Info: Elapsed time: 00:00:28
+    Info: Total CPU time (on all processors): 00:00:47
 
 
 +------------------------------------------+

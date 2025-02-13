@@ -1,0 +1,22 @@
+Fitter Status : Successful - Thu Feb 13 14:42:04 2025
+Quartus Prime Version : 23.1std.1 Build 993 05/14/2024 SC Lite Edition
+Revision Name : TopDE
+Top-level Entity Name : CPU
+Family : Cyclone V
+Device : 5CSEMA5F31C6
+Timing Models : Final
+Logic utilization (in ALMs) : 7,980 / 32,070 ( 25 % )
+  * Logic utilization warning : A large number of ALMs contain virtual pins and count towards logic utilization
+  * ALMs containing virtual pins : 593 / 32,070 ( 2 % )
+Total registers : 4763
+Total pins : 239 / 457 ( 52 % )
+Total virtual pins : 1,185
+Total block memory bits : 47,616 / 4,065,280 ( 1 % )
+Total RAM Blocks : 7 / 397 ( 2 % )
+Total DSP Blocks : 18 / 87 ( 21 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

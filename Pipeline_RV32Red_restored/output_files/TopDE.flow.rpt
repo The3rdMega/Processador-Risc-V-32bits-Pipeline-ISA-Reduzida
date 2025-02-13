@@ -1,5 +1,5 @@
 Flow report for TopDE
-Wed Feb 12 18:18:00 2025
+Thu Feb 13 19:34:07 2025
 Quartus Prime Version 23.1std.1 Build 993 05/14/2024 SC Lite Edition
 
 
@@ -41,15 +41,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +---------------------------------+------------------------------------------------+
-; Flow Status                     ; Successful - Wed Feb 12 18:17:51 2025          ;
+; Flow Status                     ; Successful - Thu Feb 13 19:33:58 2025          ;
 ; Quartus Prime Version           ; 23.1std.1 Build 993 05/14/2024 SC Lite Edition ;
 ; Revision Name                   ; TopDE                                          ;
 ; Top-level Entity Name           ; TopDE                                          ;
 ; Family                          ; Cyclone V                                      ;
 ; Device                          ; 5CSEMA5F31C6                                   ;
 ; Timing Models                   ; Final                                          ;
-; Logic utilization (in ALMs)     ; 1,466 / 32,070 ( 5 % )                         ;
-; Total registers                 ; 1666                                           ;
+; Logic utilization (in ALMs)     ; 1,477 / 32,070 ( 5 % )                         ;
+; Total registers                 ; 1783                                           ;
 ; Total pins                      ; 73 / 457 ( 16 % )                              ;
 ; Total virtual pins              ; 96                                             ;
 ; Total block memory bits         ; 65,536 / 4,065,280 ( 2 % )                     ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/12/2025 18:16:22 ;
+; Start date & time ; 02/13/2025 19:32:27 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; TopDE               ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 2545002946435.173939498218912          ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 2545002946435.173948594728332          ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -98,11 +98,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 4915 MB             ; 00:00:51                           ;
-; Fitter               ; 00:00:51     ; 1.2                     ; 6610 MB             ; 00:01:55                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4880 MB             ; 00:00:06                           ;
-; Timing Analyzer      ; 00:00:08     ; 1.7                     ; 5206 MB             ; 00:00:13                           ;
-; Total                ; 00:01:34     ; --                      ; --                  ; 00:03:05                           ;
+; Analysis & Synthesis ; 00:00:25     ; 1.0                     ; 4952 MB             ; 00:00:46                           ;
+; Fitter               ; 00:00:53     ; 1.2                     ; 6640 MB             ; 00:01:58                           ;
+; Assembler            ; 00:00:07     ; 1.0                     ; 4892 MB             ; 00:00:06                           ;
+; Timing Analyzer      ; 00:00:08     ; 1.7                     ; 5218 MB             ; 00:00:14                           ;
+; Total                ; 00:01:33     ; --                      ; --                  ; 00:03:04                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

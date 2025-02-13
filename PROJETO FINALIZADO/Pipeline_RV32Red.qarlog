@@ -1,0 +1,34 @@
+Quartus Prime Archive log --	C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/PROJETO FINALIZADO/Pipeline_RV32Red.qarlog
+
+Archive:	C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/PROJETO FINALIZADO/Pipeline_RV32Red.qar
+Date:		Thu Feb 13 19:40:31 2025
+Quartus Prime		23.1std.1 Build 993 05/14/2024 SC Lite Edition
+
+	=========== Files Selected: ===========
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ALU.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ALUControle.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Controle.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/GeradorImediato.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Multiciclo.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Pipeline.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Registradores.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.qpf
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.qsf
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/TopDE_assignment_defaults.qdf
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Uniciclo.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/Waveform.vwf
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/assignment_defaults.qdf
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_data.mif
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/de1_text.mif
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/decoder7.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/fdiv.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/params.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramD.qip
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramD.v
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramI.qip
+C:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/ramI.v
+	======= Total: 23 files to archive =======
+
+	================ Status: ===============
+All files archived successfully.

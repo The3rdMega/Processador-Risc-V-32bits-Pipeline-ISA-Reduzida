@@ -1,0 +1,54 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Arthur/Documents/Processador-Risc-V-32bits-Pipeline-ISA-Reduzida/Pipeline_RV32Red_restored/simulation/qsim
+vTopDE
+Z1 !s110 1739484687
+!i10b 1
+!s100 GdCL70Q3Z<KO=NC]WK1MP3
+InLCbZiDPl5XeX6eT[7bOV2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1739484685
+8TopDE.vo
+FTopDE.vo
+L0 32
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1739484686.000000
+!s107 TopDE.vo|
+!s90 -work|work|TopDE.vo|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+n@top@d@e
+vTopDE_vlg_vec_tst
+R1
+!i10b 1
+!s100 lB1d>A9ODH;fbJ3]ZW?@]0
+I>3RMA8`c0@8fk4TKD>YY02
+R2
+R0
+w1739484684
+8Waveform.vwf.vt
+FWaveform.vwf.vt
+L0 30
+R3
+r1
+!s85 0
+31
+!s108 1739484687.000000
+!s107 Waveform.vwf.vt|
+!s90 -work|work|Waveform.vwf.vt|
+!i113 1
+R4
+R5
+n@top@d@e_vlg_vec_tst

@@ -1,35 +1,45 @@
 .text
 #teste add
-li t1, 5
-li t2, 3
-add t0,t1,t1
+li t0, 5			#WORKING
+li t1, 3
+add t2,t0,t0	#t0 = 10	#WORKING
 
 #teste sub
-sub t0,t1,t2
+sub s0,t0,t1	#t0 = 2		#WORKING
 
 #teste and
-and t0,t1,t2
+and s1,t0,t1	#t0 = 1		#WORKING
 
 #teste or
-or t0,t1,t2 #0101 #0011 #0111
+or a0,t0,t1 	#t0 = 7		#WORKING
 
 #teste slt
-slt t0,t2,t1
+slt a1,t1,t0	#t0 = 1		#WORKING
 
 #teste store e load
-sw t1, 0(gp)
-lw t0, 0(gp)
+sw t0, 0(gp)			#WORKING
+sw t1, 4(gp)			#WORKING
 
-#teste beq]
-li t2, 5
-beq t1,t2, BeqSkip
+lw a2, 4(gp)	#t0 = 3		#WORKING
+lw a3, 0(gp)	#t0 = 5		#WORKING
+#teste beq
+li t1, 5
+beq t0,t1, BeqSkip 	#400030 -> 400038	#WORKING
+			#t0 != 100 (h64)
+li a4, 100
 
-li t0, 100
-
-BeqSkip:
-jal t3, JalSkip
-li t0, 200
+BeqSkip:	
+#teste jal
+jal t6, JalSkip		#400038 -> 400040	#WORKING
+li a5, 200
 
 JalSkip:
-jal ra, JalSkip
+jal ra, JalrTest	#400040 -> 400044	#WORKING
+JalrTest:
+jalr t6, 8(ra)		#400044 -> 40004c	#t0 = 5
+li a6, 100
 
+
+jal ra, end		#40004c -> 400050	#t0 = 5
+end:
+jalr t6, 0(ra)		#400050 -> 400050	#t0 = 5
